@@ -2,17 +2,12 @@ from DFT import DFT
 from numpy import loadtxt
 from pylab import plot, show
 
-rawdata = loadtxt('pitch.txt')
-
-#print(type(rawdata))
-
-#plot(rawdata)
-#show()
+data = loadtxt('co2_mm_mlo.txt',float)
 
 mydft=DFT()
 
-a=mydft.dft(rawdata)
+a=mydft.dft(data[:,3])
 b=list(map(abs,a))
-plot(b)
 
+plot(b)
 show()
